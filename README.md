@@ -1,5 +1,5 @@
 # MultiThreading Presentation
-This presentation is held at Faculty of Electronic Engineering, under direct supervision of Professor Dr. Nabil A. Ismail of Computer science and Engineering Dept.
+This presentation was held at Faculty of Electronic Engineering, under direct supervision of **Professor Dr. Nabil A. Ismail** of Computer science and Engineering Dept.
 
 ## The presentation
 Was about two major topics in Java Programming Language concerning  Multithreading and Concurrency. Namely, Thread Synchronization and DeadLock.
