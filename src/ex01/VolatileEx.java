@@ -3,7 +3,7 @@ package ex01;
 import java.util.Scanner;
 
 public class VolatileEx {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		CustomThread customThread = new CustomThread();
 		Scanner scanner = new Scanner(System.in);
 		customThread.start();
@@ -12,12 +12,13 @@ public class VolatileEx {
 		scanner.nextLine();
 		System.out.println("Main thread : continues");
 		customThread.shutdown();
+		customThread.join();
 		System.out.println("Main thread : ended");
 
 	}
 
 	static class CustomThread extends Thread {
-		private boolean running = true;
+		private volatile boolean running = true;
 
 		@Override
 		public void run() {
