@@ -27,7 +27,7 @@ public class SynchronizedExample {
 		System.out.println("Count is : " + count);
 	}
 
-	private void increment() {
+	private synchronized void increment() {
 		count++;
 	}
 }
