@@ -29,6 +29,7 @@ public class ReentrantLockExample {
 	}
 
 	public static class Account {
+		ReentrantLock depositLock = new ReentrantLock();
 		private int balance = 0;
 
 		int getBalance() {
@@ -36,6 +37,7 @@ public class ReentrantLockExample {
 		}
 
 		void deposit(int amount) {
+			depositLock.lock();
 			try {
 				int newBalance = balance + amount;
 
@@ -45,6 +47,8 @@ public class ReentrantLockExample {
 				balance = newBalance;
 			} catch (InterruptedException ex) {
 				ex.printStackTrace();
+			} finally {
+				depositLock.unlock();
 			}
 		}
 	}
